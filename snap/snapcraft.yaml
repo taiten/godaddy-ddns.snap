@@ -1,6 +1,6 @@
 name: godaddy-ddns
 base: core20
-version: '0.1'
+version: '1.0'
 summary: Godaddy dns updater service provider
 description: |
   When you have a domain name managed on Godaddy, you may use this snap to update
