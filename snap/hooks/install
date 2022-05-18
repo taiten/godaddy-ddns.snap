@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+snapctl set apikey=""
+snapctl set apisecret=""
+snapctl set domain.name=""
+snapctl set domain.type=""
+snapctl set domain.subdomain=""
+snapctl set domain.ttl=""
+
+
+exit 0

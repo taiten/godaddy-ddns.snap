@@ -1,0 +1,34 @@
+name: godaddy-ddns
+base: core20
+version: '0.1'
+summary: Godaddy dns updater service provider
+description: |
+  When you have a domain name managed on Godaddy, you may use this snap to update
+  your domain name ip address with this snap. Once it's set up correctly, the service
+  will update the ip address every 60 seconds or manually update by a simple command.
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+
+apps:
+  godaddy-ddns:
+    command: godaddy_ddns.sh
+
+  ddns-daemon:
+    command: godaddy_ddns.sh
+    daemon: simple
+    restart-condition: always
+    restart-delay: 60s
+    plugs: [network, network-bind]
+
+parts:
+  godaddy-ddns:
+    # See 'snapcraft plugins'
+    plugin: dump
+    source: .
+
+  runtime:
+    plugin: nil
+    stage-packages:
+      - jq 
+      - curl
