@@ -19,7 +19,7 @@ apps:
     daemon: simple
     restart-condition: always
     restart-delay: 60s
-    plugs: [network, network-bind]
+    plugs: [network]
 
 parts:
   godaddy-ddns:
